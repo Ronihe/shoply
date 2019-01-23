@@ -11,6 +11,7 @@ class ShoppingList extends Component {
 
   add(newItem) {
     this.setState({ itemsOnList: [...this.state.itemsOnList, newItem] });
+    this.props.add(newItem);
   }
 
   remove(itemId) {
@@ -19,9 +20,11 @@ class ShoppingList extends Component {
         ...this.state.itemsOnList.filter(item => item.id !== itemId)
       ]
     });
+    this.props.remove(itemId);
   }
 
   render() {
+    // console.log(this)
     return this.props.items.map(item => {
       return <ShoppingItem item={item} add={this.add} remove={this.remove} />;
     });
