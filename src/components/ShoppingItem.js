@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class ShoppingItem extends Component {
   render() {
+    const amount = this.props.amount || false;
     return (
       <div className="shopping-item">
         <h2>The Name Is: {this.props.item.name}</h2>
@@ -22,6 +23,7 @@ class ShoppingItem extends Component {
           {' '}
           Remove{' '}
         </button>
+        <p>Amount: {amount}</p>
       </div>
     );
   }

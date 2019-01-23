@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import rootReducer from './rootReducer';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-// import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 const store = createStore(
   rootReducer,
@@ -16,9 +16,9 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    {/* <BrowserRouter> */}
-    <App />
-    {/* </BrowserRouter> */}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );

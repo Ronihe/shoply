@@ -9,7 +9,6 @@ class ShoppingListContainer extends Component {
     //console.log('shoppinglist props', this.props);
     return (
       <div>
-        <NavBar {...this.props} />
         <ShoppingList {...this.props} />
       </div>
     );

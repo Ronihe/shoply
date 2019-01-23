@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { add, remove } from '../actions';
-import NavBar from '../components/NavBar';
+import Cart from '../components/Cart';
 
-class NavBarContainer extends Component {
+class CartContainer extends Component {
   render() {
     //console.log('shoppinglist props', this.props);
     return (
       <div>
-        <NavBar {...this.props} />
+        <Cart {...this.props} />
       </div>
     );
   }
@@ -16,7 +16,6 @@ class NavBarContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    items: state.data.items,
     boughtItems: state.boughtItems
   };
 }
@@ -26,4 +25,4 @@ const connectedComponent = connect(
   { add, remove }
 );
 
-export default connectedComponent(NavBarContainer);
+export default connectedComponent(CartContainer);
